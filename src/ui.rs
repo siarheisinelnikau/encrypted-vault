@@ -2264,7 +2264,7 @@ fn capture_client(ui: &UiCell, hwnd: HWND, path: &std::path::Path) -> Result<()>
         let bytes =
             std::slice::from_raw_parts(pixels as *const u8, width as usize * height as usize * 4);
         let mut rgba = bytes.to_vec();
-        for pixel in rgba.chunks_exact_mut(4) {
+        for pixel in rgba.as_chunks_mut::<4>().0 {
             pixel.swap(0, 2);
             pixel[3] = 255;
         }

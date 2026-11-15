@@ -281,8 +281,22 @@ fn deterministic_random_writes_truncations_and_concurrent_appends() {
     let mut fs = shared.lock().unwrap();
     let data = fs.read(h1, 0, MAX_IO).unwrap();
     assert_eq!(data.len(), 256);
-    assert_eq!(data.chunks_exact(8).filter(|c| *c == [11; 8]).count(), 16);
-    assert_eq!(data.chunks_exact(8).filter(|c| *c == [22; 8]).count(), 16);
+    assert_eq!(
+        data.as_chunks::<8>()
+            .0
+            .iter()
+            .filter(|c| **c == [11; 8])
+            .count(),
+        16
+    );
+    assert_eq!(
+        data.as_chunks::<8>()
+            .0
+            .iter()
+            .filter(|c| **c == [22; 8])
+            .count(),
+        16
+    );
     for h in [h1, h2] {
         fs.cleanup(h, false).unwrap();
         fs.close(h).unwrap();
