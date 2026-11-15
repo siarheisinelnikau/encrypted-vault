@@ -1,0 +1,52 @@
+{
+  "upstream": "https://github.com/RustCrypto/password-hashes",
+  "ref": "argon2-v0.5.3",
+  "version": "0.5.3",
+  "changes": "None to library source or manifest. Development-only integration tests are not vendored.",
+  "files": [
+    {
+      "path": "Cargo.toml",
+      "gitBlob": "5b55fdc8361cbc3e2ab58e3ef3be74c08a669bb9"
+    },
+    {
+      "path": "README.md",
+      "gitBlob": "0cf176dcae9096e8f328912d64130c44bde291e4"
+    },
+    {
+      "path": "LICENSE-MIT",
+      "gitBlob": "6f139a79c1dfd2174032270d7179510861d29e52"
+    },
+    {
+      "path": "LICENSE-APACHE",
+      "gitBlob": "78173fa2e753d614bb0aa5ad125ddbbe70b282c4"
+    },
+    {
+      "path": "src/algorithm.rs",
+      "gitBlob": "e330e6ddb1f62df15322396a9a0cb4be2b4e61d6"
+    },
+    {
+      "path": "src/blake2b_long.rs",
+      "gitBlob": "47d4742e0a57491fd74ebee890d9cfec3474bfa3"
+    },
+    {
+      "path": "src/block.rs",
+      "gitBlob": "fcf89d71e97405ecbfc31d3c86b818994ed8faf3"
+    },
+    {
+      "path": "src/error.rs",
+      "gitBlob": "3a6b964692f990257492ab62e605c861d348a229"
+    },
+    {
+      "path": "src/lib.rs",
+      "gitBlob": "a8b801f278aa4a5d004e4f76222f44829309e218"
+    },
+    {
+      "path": "src/params.rs",
+      "gitBlob": "edfc005b284d60ce20ad825bca0b702615009c9b"
+    },
+    {
+      "path": "src/version.rs",
+      "gitBlob": "2ae8574cff961e2965be940ed7a6ad9639112af7"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+Encrypted Vault application source is MIT licensed. Third-party components
+retain their own licenses and copyright notices.
+
+RustCrypto Argon2 0.5.3
+Source: https://github.com/RustCrypto/password-hashes/tree/argon2-v0.5.3/argon2
+License: MIT OR Apache-2.0.
+Unmodified vendored source, license texts, upstream README and file identities
+are preserved in vendor/argon2, including PROVENANCE.json.
+
+RustCrypto XChaCha20-Poly1305, SHA-256, BLAKE2 and their transitive libraries
+retain their respective MIT/Apache licenses. ring and its bundled components
+retain their ISC/MIT/OpenSSL/BoringSSL notices. Dependency license texts and
+package identities are included by tools/package.ps1 in licenses/.
+
+Dokany is an external, dynamically linked runtime and is not redistributed.
+Its DLL, kernel driver and installer are LGPL licensed.
+Source and licenses: https://github.com/dokan-dev/dokany
+Public ABI reference: dokan/dokan.h, Git blob
+bc272fd1856143a75583d2b13cef4e360a6211f3; sys/public.h, Git blob
+598109a03e7c69e54ab7bf205a053d30089744bb.

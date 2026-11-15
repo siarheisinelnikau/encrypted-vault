@@ -1,0 +1,23 @@
+name: Build and verify
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - run: python tools/verify_vendor.py
+      - run: cargo fmt --package encrypted-vault --check
+      - run: cargo clippy --locked --all-targets --jobs 2 -- -D warnings
+      - run: cargo test --locked --all-targets --jobs 2 -- --test-threads=2
+      - run: ./tools/package.ps1
+        shell: pwsh
+      - run: python tools/verify_pe.py dist/EncryptedVault-v0.1.0.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EncryptedVault-windows
+          path: dist/
